@@ -15,13 +15,13 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity
+public class Holiday extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_holiday);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
+        getMenuInflater().inflate(R.menu.holiday, menu);
         return true;
     }
 
@@ -89,10 +89,10 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_home) {
-            Toast.makeText(this, "I clicked the Home option", Toast.LENGTH_LONG).show();
-        } else if (id == R.id.nav_holidays) {
-            Intent intent = new Intent(MainActivity.this, Holiday.class);
+            Intent intent = new Intent(Holiday.this, MainActivity.class);
             startActivity(intent);
+        } else if (id == R.id.nav_holidays) {
+            Toast.makeText(this, "I clicked the Holidays option", Toast.LENGTH_LONG).show();
         } else if (id == R.id.nav_places) {
             Toast.makeText(this, "I clicked the Places option", Toast.LENGTH_LONG).show();
         } else if (id == R.id.nav_gallery) {

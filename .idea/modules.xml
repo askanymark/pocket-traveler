@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/PocketTraveler.iml" filepath="$PROJECT_DIR$/PocketTraveler.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pocket-traveler.iml" filepath="$PROJECT_DIR$/pocket-traveler.iml" />
     </modules>
   </component>
 </project>
