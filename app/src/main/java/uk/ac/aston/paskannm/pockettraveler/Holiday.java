@@ -4,16 +4,15 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Toast;
 
 public class Holiday extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -25,6 +24,7 @@ public class Holiday extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        /*
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -33,6 +33,7 @@ public class Holiday extends AppCompatActivity
                         .setAction("Action", null).show();
             }
         });
+        */
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -92,13 +93,13 @@ public class Holiday extends AppCompatActivity
             Intent intent = new Intent(Holiday.this, MainActivity.class);
             startActivity(intent);
         } else if (id == R.id.nav_holidays) {
-            Toast.makeText(this, "I clicked the Holidays option", Toast.LENGTH_LONG).show();
+            return true;
         } else if (id == R.id.nav_places) {
-            Toast.makeText(this, "I clicked the Places option", Toast.LENGTH_LONG).show();
+            Intent intent = new Intent(Holiday.this, Places.class);
         } else if (id == R.id.nav_gallery) {
-            Toast.makeText(this, "I clicked the Gallery option", Toast.LENGTH_LONG).show();
+            return true;
         } else if (id == R.id.nav_settings) {
-            Toast.makeText(this, "I clicked the Settings option", Toast.LENGTH_LONG).show();
+            return true;
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

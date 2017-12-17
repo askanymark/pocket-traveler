@@ -21,7 +21,9 @@
     <!-- Navigation -->
     <string name="navigation_drawer_open">Open</string>
     <string name="navigation_drawer_close">Close</string>
-    <string name="title_activity_holiday">Holiday</string>
+    <string name="title_activity_main">Home</string>
+    <string name="title_activity_holiday">Holidays</string>
+    <string name="title_activity_places">Places</string>
 
     <string name="action_settings">Settings</string>
 </resources>
