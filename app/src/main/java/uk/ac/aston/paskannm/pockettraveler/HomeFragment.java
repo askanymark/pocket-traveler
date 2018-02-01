@@ -1,5 +1,7 @@
 package uk.ac.aston.paskannm.pockettraveler;
 
+import android.content.Intent;
+import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.app.Fragment;
 import android.support.annotation.Nullable;
@@ -25,9 +27,13 @@ public class HomeFragment extends android.support.v4.app.Fragment {
         view.findViewById(R.id.button_holidays).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                /*
                 FragmentTransaction ft = getFragmentManager().beginTransaction();
                 ft.replace(R.id.content_home, new HolidayFragment());
                 ft.commit();
+                */
+                Intent i = new Intent(getActivity(), HolidayActivity.class);
+                startActivity(i);
                 ((MainActivity)getActivity()).setCurrentCheckedNavigationItem(R.id.nav_holidays);
             }
         });
@@ -45,10 +51,15 @@ public class HomeFragment extends android.support.v4.app.Fragment {
         view.findViewById(R.id.button_gallery).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                /*
                 FragmentTransaction ft = getFragmentManager().beginTransaction();
                 ft.replace(R.id.content_home, new GalleryFragment());
                 ft.commit();
                 ((MainActivity)getActivity()).setCurrentCheckedNavigationItem(R.id.nav_gallery);
+                */
+
+                Intent i = new Intent(getActivity(), GridViewActivity.class);
+                startActivity(i);
             }
         });
 

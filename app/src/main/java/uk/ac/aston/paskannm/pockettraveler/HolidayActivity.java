@@ -1,15 +1,10 @@
 package uk.ac.aston.paskannm.pockettraveler;
 
-import android.app.Activity;
-import android.content.Context;
+import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.app.Fragment;
-import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -17,7 +12,7 @@ import java.util.List;
 
 import uk.ac.aston.paskannm.pockettraveler.adapter.HolidayAdapter;
 
-public class HolidayFragment extends android.support.v4.app.Fragment {
+public class HolidayActivity extends AppCompatActivity {
 
     private RecyclerView mRecyclerView;
     private RecyclerView.LayoutManager mLayoutManager;
@@ -48,16 +43,11 @@ public class HolidayFragment extends android.support.v4.app.Fragment {
             R.drawable.russia
     };
 
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        ((MainActivity)getActivity()).setActionBarTitle("Holidays");
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_holiday, container, false);
-    }
-
     @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_holiday);
+        mRecyclerView = (RecyclerView)findViewById(R.id.recycler_view);
         // Use this setting to improve performance if changes
         // in content don't change layout size of RecyclerView
         /*
@@ -72,7 +62,7 @@ public class HolidayFragment extends android.support.v4.app.Fragment {
          */
 
         // using a linearlayout manager
-        mLayoutManager = new LinearLayoutManager(this.getActivity());
+        mLayoutManager = new LinearLayoutManager(this);
 
         mRecyclerView.setLayoutManager(mLayoutManager);
         holidayList = new ArrayList<>();
@@ -81,6 +71,8 @@ public class HolidayFragment extends android.support.v4.app.Fragment {
             Holiday holiday = new Holiday(titles[i], dates[i], notes[i], thumbnails[i]);
             holidayList.add(holiday);
         }
+
+        holidayAdapter = new HolidayAdapter(holidayList);
 
         mRecyclerView.setAdapter(holidayAdapter);
         holidayAdapter.notifyDataSetChanged();

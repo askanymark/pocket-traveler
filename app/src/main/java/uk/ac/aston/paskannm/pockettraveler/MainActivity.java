@@ -16,6 +16,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -103,9 +104,14 @@ public class MainActivity extends AppCompatActivity
             ft.replace(R.id.content_home, new HomeFragment());
             ft.commit();
         } else if (id == R.id.nav_holidays) {
+            /*
             android.support.v4.app.FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
             ft.replace(R.id.content_home, new HolidayFragment());
             ft.commit();
+            */
+            Intent i = new Intent(this, HolidayActivity.class);
+            startActivity(i);
+            setCurrentCheckedNavigationItem(R.id.nav_holidays);
         } else if (id == R.id.nav_places) {
             android.support.v4.app.FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
             ft.replace(R.id.content_home, new PlacesFragment());

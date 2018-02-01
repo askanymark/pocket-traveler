@@ -1,8 +1,8 @@
 package uk.ac.aston.paskannm.pockettraveler.helper;
 
 import android.os.Environment;
-import android.provider.ContactsContract;
 
+import java.io.File;
 import java.util.Arrays;
 import java.util.List;
 
@@ -23,4 +23,6 @@ public class AppConstant {
 
     // Supported file formats
     public static final List<String> FILE_EXTN = Arrays.asList("jpg", "jpeg", "png");
+
+    public static final String TAG = "GalleryFragment";
 }

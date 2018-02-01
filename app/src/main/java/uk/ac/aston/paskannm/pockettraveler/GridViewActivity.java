@@ -6,9 +6,12 @@ import uk.ac.aston.paskannm.pockettraveler.helper.Utils;
 
 import java.util.ArrayList;
 
+import android.Manifest;
 import android.app.Activity;
 import android.os.Bundle;
 import android.content.res.Resources;
+import android.support.v4.app.ActivityCompat;
+import android.util.Log;
 import android.util.TypedValue;
 import android.widget.GridView;
 
@@ -41,6 +44,10 @@ public class GridViewActivity extends Activity {
 
         // setting grid view adapter
         gridView.setAdapter(adapter);
+
+        ActivityCompat.requestPermissions(GridViewActivity.this,
+                new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},
+                1);
     }
 
     private void InitilizeGridLayout() {
