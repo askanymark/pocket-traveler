@@ -7,5 +7,5 @@
     tools:context="uk.ac.aston.paskannm.pockettraveler.GalleryFragment">
 
     <!-- TODO: Update blank fragment layout -->
-
+    <include layout="@layout/activity_grid_view"/>
 </LinearLayout>
