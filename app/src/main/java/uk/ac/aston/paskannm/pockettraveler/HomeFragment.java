@@ -51,15 +51,10 @@ public class HomeFragment extends android.support.v4.app.Fragment {
         view.findViewById(R.id.button_gallery).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                /*
                 FragmentTransaction ft = getFragmentManager().beginTransaction();
                 ft.replace(R.id.content_home, new GalleryFragment());
                 ft.commit();
                 ((MainActivity)getActivity()).setCurrentCheckedNavigationItem(R.id.nav_gallery);
-                */
-
-                Intent i = new Intent(getActivity(), GridViewActivity.class);
-                startActivity(i);
             }
         });
 

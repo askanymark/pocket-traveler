@@ -104,11 +104,6 @@ public class MainActivity extends AppCompatActivity
             ft.replace(R.id.content_home, new HomeFragment());
             ft.commit();
         } else if (id == R.id.nav_holidays) {
-            /*
-            android.support.v4.app.FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-            ft.replace(R.id.content_home, new HolidayFragment());
-            ft.commit();
-            */
             Intent i = new Intent(this, HolidayActivity.class);
             startActivity(i);
             setCurrentCheckedNavigationItem(R.id.nav_holidays);
