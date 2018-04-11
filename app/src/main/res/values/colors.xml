@@ -7,4 +7,10 @@
     <color name="textSecondary">#727272</color>
     <color name="white">#fff</color>
     <color name="background">#dae2e2e2</color>
+    <color name="colorAstonPrimary">#ff7730</color>
+    <color name="colorAstonPrimaryDark">#b25120</color>
+    <color name="colorAstonAccent">#ffa32b</color>
+    <color name="colorHolidaysPrimary">#9aff70</color>
+    <color name="colorHolidaysPrimaryDark">#72bb53</color>
+    <color name="colorHolidaysAccent">#70ffab</color>
 </resources>

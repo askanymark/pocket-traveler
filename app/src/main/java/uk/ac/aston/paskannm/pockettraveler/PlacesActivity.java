@@ -1,40 +1,33 @@
 package uk.ac.aston.paskannm.pockettraveler;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.View;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import uk.ac.aston.paskannm.pockettraveler.adapter.HolidayAdapter;
+import uk.ac.aston.paskannm.pockettraveler.adapter.PlaceAdapter;
 
-public class HolidayActivity extends AppCompatActivity {
+public class PlacesActivity extends AppCompatActivity {
 
     private RecyclerView mRecyclerView;
     private RecyclerView.LayoutManager mLayoutManager;
-    private List<Holiday> holidayList;
-    private HolidayAdapter holidayAdapter;
+    private List<Place> placeList;
+    private PlaceAdapter placeAdapter;
 
     String[] titles = {
-            "Trip to San Diego",
-            "Journey to centre of Earth",
-            "Misadventures in Russia"
+            "San Diego",
+            "Centre of Earth",
+            "Moscow"
     };
 
     String[] dates = {
             "12.12.2017",
             "01.01.1970",
             "12.05.1996"
-    };
-
-    String[] notes = {
-            "Magnificent!",
-            "You won't believe me if I told you",
-            "Сумасшедшие русские"
     };
 
     int[] thumbnails = {
@@ -46,8 +39,8 @@ public class HolidayActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_holiday);
-        mRecyclerView = (RecyclerView)findViewById(R.id.recycler_view);
+        setContentView(R.layout.activity_places);
+        mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         // Use this setting to improve performance if changes
         // in content don't change layout size of RecyclerView
         /*
@@ -65,16 +58,16 @@ public class HolidayActivity extends AppCompatActivity {
         mLayoutManager = new LinearLayoutManager(this);
 
         mRecyclerView.setLayoutManager(mLayoutManager);
-        holidayList = new ArrayList<>();
+        placeList = new ArrayList<>();
 
         for (int i = 0; i < titles.length; i++) {
-            Holiday holiday = new Holiday(titles[i], dates[i], notes[i], thumbnails[i]);
-            holidayList.add(holiday);
+            Place place = new Place(titles[i], dates[i], thumbnails[i]);
+            placeList.add(place);
         }
 
-        holidayAdapter = new HolidayAdapter(holidayList);
+        placeAdapter = new PlaceAdapter(placeList);
 
-        mRecyclerView.setAdapter(holidayAdapter);
-        holidayAdapter.notifyDataSetChanged();
+        mRecyclerView.setAdapter(placeAdapter);
+        placeAdapter.notifyDataSetChanged();
     }
 }

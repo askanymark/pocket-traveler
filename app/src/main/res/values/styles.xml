@@ -1,8 +1,7 @@
 <resources>
 
-    <!-- Base application theme. -->
+    <!-- Base application theme.-->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
@@ -16,5 +15,18 @@
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="Aston" parent="AppTheme" >
+        <item name="colorPrimary">@color/colorAstonPrimary</item>
+        <item name="colorPrimaryDark">@color/colorAstonPrimaryDark</item>
+        <item name="colorAccent">@color/colorAstonAccent</item>
+    </style>
+
+    <style name="Holidays" parent="Theme.AppCompat.Light.NoActionBar" >
+        <item name="colorPrimary">@color/colorHolidaysPrimary</item>
+        <item name="colorPrimaryDark">@color/colorHolidaysPrimaryDark</item>
+        <item name="colorAccent">@color/colorHolidaysAccent</item>
+    </style>
+
 
 </resources>

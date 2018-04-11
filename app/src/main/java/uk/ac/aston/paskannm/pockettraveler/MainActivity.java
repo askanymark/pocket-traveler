@@ -108,9 +108,9 @@ public class MainActivity extends AppCompatActivity
             startActivity(i);
             setCurrentCheckedNavigationItem(R.id.nav_holidays);
         } else if (id == R.id.nav_places) {
-            android.support.v4.app.FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-            ft.replace(R.id.content_home, new PlacesFragment());
-            ft.commit();
+            Intent i = new Intent(this, PlacesActivity.class);
+            startActivity(i);
+            setCurrentCheckedNavigationItem(R.id.nav_places);
         } else if (id == R.id.nav_gallery) {
             android.support.v4.app.FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
             ft.replace(R.id.content_home, new GalleryFragment());
