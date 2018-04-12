@@ -1,16 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#9C27B0</color>
-    <color name="colorPrimaryDark">#7B1FA2</color>
-    <color name="colorAccent">#FE3F80</color>
-    <color name="textPrimary">#212121</color>
-    <color name="textSecondary">#727272</color>
+    <color name="colorPrimaryDark">#6a0080</color>
+    <color name="colorAccent">#d05ce3</color>
+    <color name="secondaryLightColor">#ffff6d</color>
+    <color name="secondaryDarkColor">#acc700</color>
+    <color name="textPrimary">#ffffff</color>
+    <color name="textSecondary">#000000</color>
     <color name="white">#fff</color>
     <color name="background">#dae2e2e2</color>
-    <color name="colorAstonPrimary">#ff7730</color>
-    <color name="colorAstonPrimaryDark">#b25120</color>
-    <color name="colorAstonAccent">#ffa32b</color>
-    <color name="colorHolidaysPrimary">#9aff70</color>
-    <color name="colorHolidaysPrimaryDark">#72bb53</color>
-    <color name="colorHolidaysAccent">#70ffab</color>
 </resources>

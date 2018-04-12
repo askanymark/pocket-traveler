@@ -25,6 +25,8 @@ public class MainActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        // Toolbar
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -37,10 +39,12 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        // Set Home as default
+        /*
+        //Set Home as default
         android.support.v4.app.FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
         ft.replace(R.id.content_home, new HomeFragment());
         ft.commit();
+        */
 
         // Set "Home" as currently open in Navigation Menu (visual clarity tweak)
         navigationView.setCheckedItem(R.id.nav_home);
@@ -100,9 +104,14 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_home) {
+            /*
             android.support.v4.app.FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
             ft.replace(R.id.content_home, new HomeFragment());
             ft.commit();
+            */
+            Intent i = new Intent(this, MainActivity.class);
+            startActivity(i);
+            setCurrentCheckedNavigationItem(R.id.nav_home);
         } else if (id == R.id.nav_holidays) {
             Intent i = new Intent(this, HolidayActivity.class);
             startActivity(i);
@@ -112,13 +121,17 @@ public class MainActivity extends AppCompatActivity
             startActivity(i);
             setCurrentCheckedNavigationItem(R.id.nav_places);
         } else if (id == R.id.nav_gallery) {
+            /*
             android.support.v4.app.FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
             ft.replace(R.id.content_home, new GalleryFragment());
             ft.commit();
+            */
         } else if (id == R.id.nav_settings) {
+            /*
             android.support.v4.app.FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
             ft.replace(R.id.content_home, new SettingsFragment());
             ft.commit();
+            */
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
