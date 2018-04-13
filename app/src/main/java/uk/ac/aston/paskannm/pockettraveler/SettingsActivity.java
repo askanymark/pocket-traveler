@@ -1,87 +1,24 @@
 package uk.ac.aston.paskannm.pockettraveler;
 
-import android.app.FragmentTransaction;
 import android.content.Intent;
-import android.net.Uri;
 import android.support.annotation.IdRes;
-import android.support.annotation.NonNull;
-import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
-import android.support.design.widget.Snackbar;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Toast;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import uk.ac.aston.paskannm.pockettraveler.adapter.HolidayAdapter;
-
-public class HolidayActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener,
-        CreateHoliday.OnFragmentInteractionListener {
-
-    private RecyclerView mRecyclerView;
-    private RecyclerView.LayoutManager mLayoutManager;
-    private List<Holiday> holidayList;
-    private HolidayAdapter holidayAdapter;
-
-    String[] titles = {
-            "Trip to San Diego",
-            "Journey to centre of Earth",
-            "Misadventures in Russia"
-    };
-
-    String[] dates = {
-            "12.12.2017",
-            "01.01.1970",
-            "12.05.1996"
-    };
-
-    String[] notes = {
-            "Magnificent!",
-            "You won't believe me if I told you",
-            "Motherland"
-    };
-
-    int[] thumbnails = {
-            R.drawable.city,
-            R.drawable.earth,
-            R.drawable.russia
-    };
+public class SettingsActivity extends AppCompatActivity
+        implements NavigationView.OnNavigationItemSelectedListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_holiday);
-        mRecyclerView = (RecyclerView)findViewById(R.id.recycler_view);
-        // Use this setting to improve performance if changes
-        // in content don't change layout size of RecyclerView
-        /*
-        if (mRecyclerView != null) {
-            mRecyclerView.setHasFixedSize(true);
-        }
-         */
-
-        /*
-        use this in case of Staggered GridLayoutManager
-        mLayoutManager = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
-         */
-
-        // using a linearlayout manager
-        mLayoutManager = new LinearLayoutManager(this);
-
-        mRecyclerView.setLayoutManager(mLayoutManager);
-        holidayList = new ArrayList<>();
+        setContentView(R.layout.activity_settings);
 
         // Toolbar
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -96,29 +33,8 @@ public class HolidayActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        // Set "Holidays" as currently open in Navigation Menu (visual clarity tweak)
-        navigationView.setCheckedItem(R.id.nav_holidays);
-
-        FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                CreateHoliday createFragment = new CreateHoliday();
-                android.support.v4.app.FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-                ft.replace(R.id.drawer_layout, createFragment);
-                ft.commit();
-            }
-        });
-
-        for (int i = 0; i < titles.length; i++) {
-            Holiday holiday = new Holiday(titles[i], dates[i], notes[i], thumbnails[i]);
-            holidayList.add(holiday);
-        }
-
-        holidayAdapter = new HolidayAdapter(holidayList);
-
-        mRecyclerView.setAdapter(holidayAdapter);
-        holidayAdapter.notifyDataSetChanged();
+        // Set "Settings" as currently open in Navigation Menu (visual clarity tweak)
+        navigationView.setCheckedItem(R.id.nav_settings);
     }
 
     public void setCurrentCheckedNavigationItem(@IdRes int id) {
@@ -197,10 +113,5 @@ public class HolidayActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
-    }
-
-    @Override
-    public void onFragmentInteraction(Uri uri) {
-
     }
 }

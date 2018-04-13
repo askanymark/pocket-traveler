@@ -61,6 +61,14 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
+        final Button buttonSettings = findViewById(R.id.button_settings);
+        buttonSettings.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                // Code here executes on main thread after user presses button
+                Intent i = new Intent(getApplicationContext(), SettingsActivity.class);
+                getApplicationContext().startActivity(i);
+            }
+        });
 
     }
 
@@ -141,11 +149,9 @@ public class MainActivity extends AppCompatActivity
             ft.commit();
             */
         } else if (id == R.id.nav_settings) {
-            /*
-            android.support.v4.app.FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-            ft.replace(R.id.content_home, new SettingsFragment());
-            ft.commit();
-            */
+            Intent i = new Intent(this, SettingsActivity.class);
+            startActivity(i);
+            setCurrentCheckedNavigationItem(R.id.nav_settings);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
