@@ -16,6 +16,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity
@@ -48,6 +49,26 @@ public class MainActivity extends AppCompatActivity
 
         // Set "Home" as currently open in Navigation Menu (visual clarity tweak)
         navigationView.setCheckedItem(R.id.nav_home);
+
+        final Button buttonHolidays = findViewById(R.id.button_holidays);
+        buttonHolidays.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                // Code here executes on main thread after user presses button
+                Intent i = new Intent(getApplicationContext(), HolidayActivity.class);
+                getApplicationContext().startActivity(i);
+            }
+        });
+
+        final Button buttonPlaces = findViewById(R.id.button_places);
+        buttonPlaces.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                // Code here executes on main thread after user presses button
+                Intent i = new Intent(getApplicationContext(), HolidayActivity.class);
+                getApplicationContext().startActivity(i);
+            }
+        });
+
+        
     }
 
     public void setActionBarTitle(String title) {
