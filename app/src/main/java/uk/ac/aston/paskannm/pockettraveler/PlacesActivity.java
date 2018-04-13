@@ -1,10 +1,12 @@
 package uk.ac.aston.paskannm.pockettraveler;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.IdRes;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -15,6 +17,7 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,7 +25,8 @@ import java.util.List;
 import uk.ac.aston.paskannm.pockettraveler.adapter.PlaceAdapter;
 
 public class PlacesActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener{
+        implements NavigationView.OnNavigationItemSelectedListener,
+        CreatePlace.OnFragmentInteractionListener{
 
     private RecyclerView mRecyclerView;
     private RecyclerView.LayoutManager mLayoutManager;
@@ -86,6 +90,17 @@ public class PlacesActivity extends AppCompatActivity
 
         // Set "Places" as currently open in Navigation Menu (visual clarity tweak)
         navigationView.setCheckedItem(R.id.nav_places);
+
+        FloatingActionButton fab = findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                CreatePlace createFragment = new CreatePlace();
+                android.support.v4.app.FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+                ft.replace(R.id.drawer_layout, createFragment);
+                ft.commit();
+            }
+        });
 
         for (int i = 0; i < titles.length; i++) {
             Place place = new Place(titles[i], dates[i], thumbnails[i]);
@@ -178,4 +193,8 @@ public class PlacesActivity extends AppCompatActivity
     }
 
 
+    @Override
+    public void onFragmentInteraction(Uri uri) {
+        
+    }
 }

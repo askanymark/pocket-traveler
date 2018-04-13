@@ -1,9 +1,13 @@
 package uk.ac.aston.paskannm.pockettraveler;
 
+import android.app.FragmentTransaction;
 import android.content.Intent;
+import android.net.Uri;
 import android.support.annotation.IdRes;
 import android.support.annotation.NonNull;
+import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
+import android.support.design.widget.Snackbar;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -23,7 +27,8 @@ import java.util.List;
 import uk.ac.aston.paskannm.pockettraveler.adapter.HolidayAdapter;
 
 public class HolidayActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener,
+        CreateHoliday.OnFragmentInteractionListener {
 
     private RecyclerView mRecyclerView;
     private RecyclerView.LayoutManager mLayoutManager;
@@ -45,7 +50,7 @@ public class HolidayActivity extends AppCompatActivity
     String[] notes = {
             "Magnificent!",
             "You won't believe me if I told you",
-            "?????????????????????? ??????????????"
+            "Motherland"
     };
 
     int[] thumbnails = {
@@ -93,6 +98,17 @@ public class HolidayActivity extends AppCompatActivity
 
         // Set "Holidays" as currently open in Navigation Menu (visual clarity tweak)
         navigationView.setCheckedItem(R.id.nav_holidays);
+
+        FloatingActionButton fab = findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                CreateHoliday createFragment = new CreateHoliday();
+                android.support.v4.app.FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+                ft.replace(R.id.drawer_layout, createFragment);
+                ft.commit();
+            }
+        });
 
         for (int i = 0; i < titles.length; i++) {
             Holiday holiday = new Holiday(titles[i], dates[i], notes[i], thumbnails[i]);
@@ -183,5 +199,10 @@ public class HolidayActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    @Override
+    public void onFragmentInteraction(Uri uri) {
+
     }
 }
