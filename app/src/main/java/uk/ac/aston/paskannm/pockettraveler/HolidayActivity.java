@@ -105,10 +105,6 @@ public class HolidayActivity extends AppCompatActivity
         holidayAdapter.notifyDataSetChanged();
     }
 
-    public void setActionBarTitle(String title) {
-        getSupportActionBar().setTitle(title);
-    }
-
     public void setCurrentCheckedNavigationItem(@IdRes int id) {
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setCheckedItem(id);
@@ -159,11 +155,6 @@ public class HolidayActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_home) {
-            /*
-            android.support.v4.app.FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-            ft.replace(R.id.content_home, new HomeFragment());
-            ft.commit();
-            */
             Intent i = new Intent(this, MainActivity.class);
             startActivity(i);
             setCurrentCheckedNavigationItem(R.id.nav_home);

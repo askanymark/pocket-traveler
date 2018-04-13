@@ -40,13 +40,6 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        /*
-        //Set Home as default
-        android.support.v4.app.FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-        ft.replace(R.id.content_home, new HomeFragment());
-        ft.commit();
-        */
-
         // Set "Home" as currently open in Navigation Menu (visual clarity tweak)
         navigationView.setCheckedItem(R.id.nav_home);
 
@@ -63,12 +56,12 @@ public class MainActivity extends AppCompatActivity
         buttonPlaces.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // Code here executes on main thread after user presses button
-                Intent i = new Intent(getApplicationContext(), HolidayActivity.class);
+                Intent i = new Intent(getApplicationContext(), PlacesActivity.class);
                 getApplicationContext().startActivity(i);
             }
         });
 
-        
+
     }
 
     public void setActionBarTitle(String title) {
