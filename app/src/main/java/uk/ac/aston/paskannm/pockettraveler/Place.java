@@ -2,12 +2,12 @@ package uk.ac.aston.paskannm.pockettraveler;
 
 public class Place {
 
-    private String title, date;
+    private String title, dateVisited;
     private int thumbnail;
 
-    public Place(String title, String date, int thumbnail) {
+    public Place(String title, String dateVisited, int thumbnail) {
         this.title = title;
-        this.date = date;
+        this.dateVisited = dateVisited;
         this.thumbnail = thumbnail;
     }
 
@@ -19,12 +19,12 @@ public class Place {
         this.title = title;
     }
 
-    public String getDate() {
-        return date;
+    public String getDateVisited() {
+        return dateVisited;
     }
 
-    public void setDate(String date) {
-        this.date = date;
+    public void setDateVisited(String dateVisited) {
+        this.dateVisited = dateVisited;
     }
 
     public int getThumbnail() {

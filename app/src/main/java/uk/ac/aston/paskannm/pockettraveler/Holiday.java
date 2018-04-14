@@ -1,12 +1,13 @@
 package uk.ac.aston.paskannm.pockettraveler;
 
 public class Holiday {
-    private String title, date, notes;
+    private String title, startDay, endDay, notes;
     private int thumbnail;
 
-    public Holiday(String title, String date, String notes, int thumbnail) {
+    public Holiday(String title, String startDay, String endDay, String notes, int thumbnail) {
         this.title = title;
-        this.date = date;
+        this.startDay = startDay;
+        this.endDay = endDay;
         this.notes = notes;
         this.thumbnail = thumbnail;
     }
@@ -19,12 +20,20 @@ public class Holiday {
         this.title = title;
     }
 
-    public String getDate() {
-        return date;
+    public String getStartDay() {
+        return startDay;
     }
 
-    public void setDate(String date) {
-        this.date = date;
+    public void setStartDay(String startDay) {
+        this.startDay = startDay;
+    }
+
+    public String getEndDay() {
+        return endDay;
+    }
+
+    public void setEndDay(String endDay) {
+        this.endDay = endDay;
     }
 
     public String getNotes() {

@@ -6,6 +6,10 @@
     <string name="places">Places</string>
     <string name="gallery">Gallery</string>
     <string name="settings">Settings</string>
+    <string name="button_view">VIEW</string>
+    <string name="button_edit">EDIT</string>
+    <string name="from">From</string>
+    <string name="to">To</string>
 
     <!-- Holiday -->
     <string name="title">Trip to San Diego 2017</string>

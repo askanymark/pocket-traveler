@@ -41,7 +41,7 @@ public class PlaceAdapter extends RecyclerView.Adapter<PlaceAdapter.ViewHolder> 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.template_cardview, parent, false);
+                .inflate(R.layout.cardview_places, parent, false);
 
         ViewHolder vh = new ViewHolder(v);
         return vh;
@@ -50,10 +50,10 @@ public class PlaceAdapter extends RecyclerView.Adapter<PlaceAdapter.ViewHolder> 
     @Override
     public void onBindViewHolder(PlaceAdapter.ViewHolder holder, int position) {
         Place place = placeList.get(position);
-        holder.editButton.setText("EDIT");
-        holder.viewButton.setText("VIEW");
+        holder.editButton.setText(R.string.button_edit);
+        holder.viewButton.setText(R.string.button_view);
         holder.placeTitle.setText(String.valueOf(place.getTitle()));
-        holder.placeDate.setText(String.valueOf(place.getDate()));
+        holder.placeDate.setText(String.valueOf(place.getDateVisited()));
         holder.thumbnailImage.setImageResource(place.getThumbnail());
         holder.avatarImage.setImageResource(R.color.colorPrimary);
     }

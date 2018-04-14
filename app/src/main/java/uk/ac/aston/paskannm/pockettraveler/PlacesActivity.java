@@ -39,10 +39,10 @@ public class PlacesActivity extends AppCompatActivity
             "Moscow"
     };
 
-    String[] dates = {
-            "12.12.2017",
-            "01.01.1970",
-            "12.05.1996"
+    String[] visitDate = {
+            "17.12.2017",
+            "02.01.1970",
+            "13.05.1996"
     };
 
     int[] thumbnails = {
@@ -103,7 +103,7 @@ public class PlacesActivity extends AppCompatActivity
         });
 
         for (int i = 0; i < titles.length; i++) {
-            Place place = new Place(titles[i], dates[i], thumbnails[i]);
+            Place place = new Place(titles[i], visitDate[i], thumbnails[i]);
             placeList.add(place);
         }
 

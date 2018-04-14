@@ -41,10 +41,16 @@ public class HolidayActivity extends AppCompatActivity
             "Misadventures in Russia"
     };
 
-    String[] dates = {
+    String[] start = {
             "12.12.2017",
             "01.01.1970",
             "12.05.1996"
+    };
+
+    String[] end = {
+            "17.01.2018",
+            "02.02.1971",
+            "15.04.2018"
     };
 
     String[] notes = {
@@ -111,7 +117,7 @@ public class HolidayActivity extends AppCompatActivity
         });
 
         for (int i = 0; i < titles.length; i++) {
-            Holiday holiday = new Holiday(titles[i], dates[i], notes[i], thumbnails[i]);
+            Holiday holiday = new Holiday(titles[i], start[i], end[i], notes[i], thumbnails[i]);
             holidayList.add(holiday);
         }
 
