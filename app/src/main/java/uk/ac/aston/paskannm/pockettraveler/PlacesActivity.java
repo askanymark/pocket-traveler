@@ -56,18 +56,6 @@ public class PlacesActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_places);
         mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view);
-        // Use this setting to improve performance if changes
-        // in content don't change layout size of RecyclerView
-        /*
-        if (mRecyclerView != null) {
-            mRecyclerView.setHasFixedSize(true);
-        }
-         */
-
-        /*
-        use this in case of Staggered GridLayoutManager
-        mLayoutManager = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
-         */
 
         // using a linearlayout manager
         mLayoutManager = new LinearLayoutManager(this);
@@ -131,17 +119,11 @@ public class PlacesActivity extends AppCompatActivity
             startActivity(i);
             setCurrentCheckedNavigationItem(R.id.nav_places);
         } else if (id == R.id.nav_gallery) {
-            /*
-            android.support.v4.app.FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-            ft.replace(R.id.content_home, new GalleryFragment());
-            ft.commit();
-            */
+            return true;
         } else if (id == R.id.nav_settings) {
-            /*
-            android.support.v4.app.FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-            ft.replace(R.id.content_home, new SettingsFragment());
-            ft.commit();
-            */
+            Intent i = new Intent(this, SettingsActivity.class);
+            startActivity(i);
+            setCurrentCheckedNavigationItem(R.id.nav_settings);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -160,11 +142,9 @@ public class PlacesActivity extends AppCompatActivity
         if (id == R.id.share) {
             return true;
         } else if (id == R.id.feedback) {
-
+            return true;
         } else if (id == R.id.help) {
-
-        } else if (id == R.id.delete) {
-
+            return true;
         }
 
         return super.onOptionsItemSelected(item);

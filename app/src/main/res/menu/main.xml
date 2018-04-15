@@ -19,10 +19,4 @@
         android:orderInCategory="300"
         android:title="@string/action_help"
         app:showAsAction="never|withText" />
-    <item
-        android:id="@+id/delete"
-        android:icon="@drawable/ic_delete_black_24dp"
-        android:orderInCategory="400"
-        android:title="@string/action_delete"
-        app:showAsAction="never" />
 </menu>

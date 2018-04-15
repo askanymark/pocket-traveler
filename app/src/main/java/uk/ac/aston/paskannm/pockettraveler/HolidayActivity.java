@@ -70,18 +70,6 @@ public class HolidayActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_holiday);
         mRecyclerView = (RecyclerView)findViewById(R.id.recycler_view);
-        // Use this setting to improve performance if changes
-        // in content don't change layout size of RecyclerView
-        /*
-        if (mRecyclerView != null) {
-            mRecyclerView.setHasFixedSize(true);
-        }
-         */
-
-        /*
-        use this in case of Staggered GridLayoutManager
-        mLayoutManager = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
-         */
 
         // using a linearlayout manager
         mLayoutManager = new LinearLayoutManager(this);
@@ -93,6 +81,7 @@ public class HolidayActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        // Drawer
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -105,6 +94,7 @@ public class HolidayActivity extends AppCompatActivity
         // Set "Holidays" as currently open in Navigation Menu (visual clarity tweak)
         navigationView.setCheckedItem(R.id.nav_holidays);
 
+        // Floating Action Button
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -116,6 +106,7 @@ public class HolidayActivity extends AppCompatActivity
             }
         });
 
+        // Generate entries
         for (int i = 0; i < titles.length; i++) {
             Holiday holiday = new Holiday(titles[i], start[i], end[i], notes[i], thumbnails[i]);
             holidayList.add(holiday);
@@ -160,11 +151,9 @@ public class HolidayActivity extends AppCompatActivity
         if (id == R.id.share) {
             return true;
         } else if (id == R.id.feedback) {
-
+            return true;
         } else if (id == R.id.help) {
-
-        } else if (id == R.id.delete) {
-
+            return true;
         }
 
         return super.onOptionsItemSelected(item);
@@ -172,7 +161,7 @@ public class HolidayActivity extends AppCompatActivity
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
-    public boolean onNavigationItemSelected(MenuItem item) {
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
@@ -189,11 +178,7 @@ public class HolidayActivity extends AppCompatActivity
             startActivity(i);
             setCurrentCheckedNavigationItem(R.id.nav_places);
         } else if (id == R.id.nav_gallery) {
-            /*
-            android.support.v4.app.FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-            ft.replace(R.id.content_home, new GalleryFragment());
-            ft.commit();
-            */
+            return true;
         } else if (id == R.id.nav_settings) {
             Intent i = new Intent(this, SettingsActivity.class);
             startActivity(i);

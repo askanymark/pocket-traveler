@@ -133,11 +133,9 @@ public class CreateHoliday extends Fragment implements NavigationView.OnNavigati
         if (id == R.id.share) {
             return true;
         } else if (id == R.id.feedback) {
-
+            return true;
         } else if (id == R.id.help) {
-
-        } else if (id == R.id.delete) {
-
+            return true;
         }
 
         return super.onOptionsItemSelected(item);
@@ -161,11 +159,7 @@ public class CreateHoliday extends Fragment implements NavigationView.OnNavigati
             startActivity(i);
             setCurrentCheckedNavigationItem(R.id.nav_places);
         } else if (id == R.id.nav_gallery) {
-            /*
-            android.support.v4.app.FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-            ft.replace(R.id.content_home, new GalleryFragment());
-            ft.commit();
-            */
+            return true;
         } else if (id == R.id.nav_settings) {
             Intent i = new Intent(getContext(), SettingsActivity.class);
             startActivity(i);

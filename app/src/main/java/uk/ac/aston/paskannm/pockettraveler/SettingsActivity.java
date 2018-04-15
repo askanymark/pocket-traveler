@@ -59,6 +59,7 @@ public class SettingsActivity extends AppCompatActivity
         return true;
     }
 
+    @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
@@ -70,11 +71,9 @@ public class SettingsActivity extends AppCompatActivity
         if (id == R.id.share) {
             return true;
         } else if (id == R.id.feedback) {
-
+            return true;
         } else if (id == R.id.help) {
-
-        } else if (id == R.id.delete) {
-
+            return true;
         }
 
         return super.onOptionsItemSelected(item);
@@ -99,11 +98,7 @@ public class SettingsActivity extends AppCompatActivity
             startActivity(i);
             setCurrentCheckedNavigationItem(R.id.nav_places);
         } else if (id == R.id.nav_gallery) {
-            /*
-            android.support.v4.app.FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-            ft.replace(R.id.content_home, new GalleryFragment());
-            ft.commit();
-            */
+            return true;
         } else if (id == R.id.nav_settings) {
             Intent i = new Intent(this, SettingsActivity.class);
             startActivity(i);
