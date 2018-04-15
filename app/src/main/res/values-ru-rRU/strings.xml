@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Pocket Traveler</string>
+    <string name="home">Главная</string>
+    <string name="holidays">Поездки</string>
+    <string name="places">Места</string>
+    <string name="gallery">Галерея</string>
+    <string name="settings">Настройки</string>
+    <string name="button_view">СМОТР.</string>
+    <string name="button_edit">РЕДАКТ.</string>
+    <string name="from">С</string>
+    <string name="to">По</string>
+    <string name="title">Поездка в Сан Диего 2017</string>
+    <string name="date">Октябрь 2017</string>
+    <string name="notes">Я не хочу об етом говорить</string>
+    <string name="label_title">Название</string>
+    <string name="label_start">Дата начала</string>
+    <string name="label_end">Дата конца</string>
+    <string name="label_photos">Фото</string>
+    <string name="label_notes">Заметки</string>
+    <string name="tap_to_edit">Нажмите что бы редактировать</string>
+    <string name="action_share">Поделиться</string>
+    <string name="action_feedback">Отзыв</string>
+    <string name="action_help">Помощь</string>
+    <string name="action_delete">Удалить</string>
+    <string name="navigation_drawer_open">Открыть</string>
+    <string name="navigation_drawer_close">Закрыть</string>
+    <string name="title_activity_main">Главная</string>
+    <string name="title_activity_holiday">Поездки</string>
+    <string name="title_activity_places">Места</string>
+    <string name="action_settings">Настройки</string>
+    <string name="hello_blank_fragment">Привет!</string>
+</resources>
